@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+  </head>
+  <body>
+
+    <section id="gameSection">
+      <div id="gameWindow">
+        <div id="charPlayerPanel" class="charGrid">
+          <h1 id="txtPlayerName">Player 1</h1>
+          <h4 id="txtPlayerHP">HP: 100</h4>
+          <img src="images/player.png" alt="">
+          <div class="menuActions">
+            <button id="btnAttack">Attack</button>
+            <button id="btnBlock">Block</button>
+            <button id="btnItems">Item</button>
+          </div>
+        </div>
+        <div class="turnText">
+          <p id="txtGameStatus">Your Turn!</p>
+          <p id="txtOutcome">Make a move!</p>
+          <button id="btnRetry">Retry?</button>
+        </div>
+        <div id="charAIPanel" class="charGrid">
+          <h1 id="txtAIName">Crag-Maw</h1>
+          <h4 id="txtAIHP">HP: 100</h4>
+          <img src="images/AI.png" alt="">
+          <div class="menuActions">
+            <button id="btnAttack">Attack</button>
+            <button id="btnBlock">Block</button>
+            <button id="btnItems">Item</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+  <script src="script.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  align-items: center;
+  flex-direction: column;
+  color: wheat;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+}
+
+#controls textarea {
+  height: 200px;
+  padding: 10px;
+  border: solid;
+  border-bottom: none;
+  outline: none;
+}
+
+#controls button {
+  height: 75px;
+  background: wheat;
+  border: solid;
+  font-size: 50px;
+  outline: none;
+}
+
+#controls button:hover {
+  background: burlywood;
+}
+
+#output {
+  display: flex;
+  background: wheat;
+  height: 500px;
+  width: 600px;
+  margin-top: 40px;
+  border: solid 1px;
+  padding: 7px 0px 0 10px;
+}

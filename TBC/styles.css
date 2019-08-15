@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #456B2B;
+  font-family: sans-serif;
+}
+
+#gameSection {
+  background: url("images/background.png");
+  background-position: 0px -400px;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#gameWindow {
+  height: 500px;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.charGrid {
+  display: grid;
+  width: 500px;
+  grid-template-columns: 1fr;
+  font-size: 25px;
+  text-align: center;
+}
+
+#charPlayerPanel, #charAIPanel {
+  background: firebrick;
+  width: 300px;
+  height: 390px;
+  border: solid;
+}
+
+#txtAIName, #txtPlayerName {
+  padding-top: 5px;
+}
+
+#charAIPanel img, #charPlayerPanel img {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 250px;
+  margin: auto;
+  border: solid;
+  background: #87ceeb;
+}
+
+.menuActions button {
+  border: solid black;
+  background: crimson;
+  color: whitesmoke;
+  width: 70px;
+  height: 35px;
+  font-size: 20px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  outline-color: white;
+}
+
+.turnText {
+  width: 30%;
+  font-size: 50px;
+  text-align: center;
+}
+
+#txtOutcome {
+  position: relative;
+  font-size: 30px;
+  top: 50px;
+}
+
+#btnRetry {
+  border: solid black;
+  background: crimson;
+  color: whitesmoke;
+  width: 180px;
+  height: 50px;
+  font-size: 34px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  outline-color: white;
+  position: relative;
+  top: 70px;
+  display: none;
+}
+
+#btnRetry:hover {
+  background: #333;
+}
+
+
+@media (max-width: 1400px) {
+  #gameWindow {
+    width: 90%;
+  }
+
+  #txtGameStatus {
+    font-size: 50px;
+  }
+
+  #txtOutcome {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #gameWindow {
+    width: 95%;
+  }
+
+  #txtGameStatus {
+    font-size: 45px;
+  }
+
+  #txtOutcome {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  #gameWindow {
+    width: 100%;
+  }
+
+  #txtGameStatus {
+    font-size: 40px;
+  }
+
+  #txtOutcome {
+    font-size: 20px;
+  }
+}
