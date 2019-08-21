@@ -7,3 +7,17 @@
 #canvas {
   background: #333;
 }
+
+#btnWrap {
+  display: flex;
+  justify-content: center;
+}
+
+#btnGenerate {
+  background: crimson;
+  font-size: 2rem;
+  width: 10rem;
+  height: 4rem;
+  position: absolute;
+  bottom: 10%;
+}
