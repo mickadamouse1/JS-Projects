@@ -8,16 +8,17 @@ window.onload = function() {
     if (lap % 8 === 0) {
       // RUN BIG BREAK
       console.log("Long Break");
+      background.style.background = "url('images/backgroundGreen2.jpg') center/cover no-repeat";
       timerLongBreak(lap);
     } else if (lap % 2 == 0) {
       // RUN SHORT BREAK
       console.log("Short Break");
-      background.style.background = "url('images/backgroundGreen.jpg') center/cover no-repeat"
+      background.style.background = "url('images/backgroundBlue.jpg') center/cover no-repeat";
       timerShortBreak(lap);
     } else {
       // RUN STUDY
       console.log("Study");
-      background.style.background = "url('images/backgroundRed.jpg') center/cover no-repeat"
+      background.style.background = "url('images/backgroundRed.jpg') center/cover no-repeat";
       timerStudy(lap);
     }
   }
@@ -27,7 +28,7 @@ window.onload = function() {
   function timerStudy(lap) {
     // increments the laps to ensure the next timer is the correct one.
     var lap = lap + 1;
-    var minutes = 25;
+    var minutes = 2;
     var seconds = 0;
     // displays the time on initiation
     txtTime.innerHTML = (`${minutes}:${seconds}0`);
@@ -61,7 +62,7 @@ window.onload = function() {
   function timerShortBreak(lap) {
     // increments the laps to ensure the next timer is the correct one.
     var lap = lap + 1;
-    var minutes = 5;
+    var minutes = 2;
     var seconds = 0;
     // displays the time on initiation.
     txtTime.innerHTML = (`0${minutes}:${seconds}0`);
@@ -95,17 +96,32 @@ window.onload = function() {
   function timerLongBreak(lap) {
     console.log(lap);
     var lap = 1;
-    var minutes = 30;
+    var minutes = 5;
     var seconds = 0;
 
     var x = setInterval(function(){
-      minutes = minutes - 1;
-      console.log(`Short Break Minutes: ${minutes}`);
-      if (minutes === 0) {
+      seconds--;
+      if (seconds === -1) {
+        seconds = 59;
+        minutes--;
+      }
+
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+
+      if (minutes < 10) {
+        txtTime.innerHTML = `0${minutes}:${seconds}`;
+      } else {
+        txtTime.innerHTML = `${minutes}:${seconds}`
+      }
+
+
+      if (minutes === 0 && seconds === "00") {
         runNextTimer(lap);
         clearTimeout(x);
       }
-    }, 200);
+    }, 100);
   }
 
   /////////////////////////////////////////////////////////
