@@ -5,7 +5,17 @@
 }
 
 body {
-  background: #333;
+  background: rgba(255, 75, 40);
+}
+
+#backgroundShader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  background-color: rgba(155,155,155, 0.1);
+  z-index: -2;
 }
 
 #appWindow {
@@ -18,10 +28,10 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 
-#background {
+#windowBackground {
   position: absolute;
   width: inherit;
   height: inherit;
@@ -30,11 +40,19 @@ body {
   z-index: -2;
 }
 
+#txtTimerName {
+  position: absolute;
+  top: 4rem;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+}
+
 #txtTime {
-  font-size: 5rem;
+  font-size: 8rem;
   text-align: center;
   color: #f4f4f4;
-  text-shadow: 0 0px 4px rgba(0,0,0,1);
+  text-shadow: 0 1px 3px rgba(0,0,0,1);
 }
 
 #btnContinue {
