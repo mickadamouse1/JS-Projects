@@ -17,7 +17,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 #background {
@@ -37,10 +38,11 @@ body {
 }
 
 #btnContinue {
-  position: relative;
-  top: 6rem;
+  position: absolute;
+  bottom: 2rem;
   width: 15rem;
   height: 4rem;
   font-size: 2rem;
-  display: none;
+  background: firebrick;
+  border: 3px solid rgba(0,0,0,0.4)
 }
