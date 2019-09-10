@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: rgba(255, 75, 40);
+}
+
+#appWindow {
+  display: flex;
+  margin: 5rem auto;
+  background: #f4f4f4;
+  width: 30rem;
+  height: 40rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
+
+#outputScreen {
+  position: relative;
+  bottom: 1rem;
+  display: block;
+  width: 25rem;
+  height: 5.5rem;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 1rem 0 0 1rem;
+  resize: none;
+}
+
+#buttonGroup {
+  position: relative;
+  bottom: -1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 26rem;
+  height: 27rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  font-size: 4rem;
+  width: 6rem;
+  height: 6rem;
+}

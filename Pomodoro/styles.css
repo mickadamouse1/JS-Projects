@@ -55,12 +55,17 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,1);
 }
 
-#btnContinue {
+#btnStart, #btnPause, #btnContinue {
   position: absolute;
   bottom: 2rem;
-  width: 15rem;
+  width: 12rem;
   height: 4rem;
   font-size: 2rem;
   background: firebrick;
-  border: 3px solid rgba(0,0,0,0.4)
+  color: #f4f4f4;
+  border: 3px solid rgba(0,0,0,0.4);
+}
+
+#btnContinue, #btnPause {
+  display: none;
 }
