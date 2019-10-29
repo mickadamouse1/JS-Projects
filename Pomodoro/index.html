@@ -3,20 +3,44 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <link rel="icon" href="images/tabIcon.png">
+    <title>Pomodoro</title>
   </head>
   <body>
     <div id="backgroundShader"></div>
 
     <div id="appWindow">
       <div id="windowBackground"></div>
-      <p id="txtTimerName">Study</p>
-      <div class="">
-        <p id="txtTime">25:00</p>
+      <div id="timerContent">
+        <p id="txtTimerName">Study</p>
+        <div class="">
+          <p id="txtTime">25:00</p>
+        </div>
+        <button id="btnStart" class="button" type="button">Start</button>
+        <button id="btnPause" class="button">Pause</button>
+        <button id="btnContinue" class="button">Continue</button>
       </div>
-      <button id="btnStart">Start</button>
-      <button id="btnPause">Pause</button>
-      <button id="btnContinue">Continue</button>
+      <div id="settingsContent">
+        <h1>Timer Settings</h1>
+        <div id="inputsGroup">
+          <div class="input">
+            <h2>Study</h2>
+            <input id="inputStudy" placeholder="25">
+          </div>
+          <div class="input">
+            <h2>Short Break</h2>
+            <input id="inputShortBreak" placeholder="5">
+          </div>
+          <div class="input">
+            <h2>Long Break</h2>
+            <input id="inputLongBreak" placeholder="30">
+          </div>
+        </div>
+        <button id="btnApplySettings" class="button">Next</button>
+        <div id="alertWindow">
+          <h3>Invalid Timer Settings!</h3>
+        </div>
+      </div>
     </div>
 
 
