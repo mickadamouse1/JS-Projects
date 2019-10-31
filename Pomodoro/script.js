@@ -21,6 +21,10 @@ window.onload = function() {
   var inputShortBreak = document.getElementById("inputShortBreak");
   var inputLongBreak = document.getElementById("inputLongBreak");
 
+  var studyTime = 0;
+  var shortBreakTime = 0;
+  var longBreakTime = 0;
+
   ///////////////////////////////////////////////////////////////////////////////
 
   // Pre-loading background images.
@@ -44,6 +48,12 @@ window.onload = function() {
     studyTimer.minutes = study;
     shortBreakTimer.minutes = short;
     longBreakTimer.minutes = long;
+    studyTime = study;
+    shortBreakTime = short;
+    longBreakTime = long;
+    studyParams.txtTime = updateTimerText(studyTime, 0);
+    shortBreakParams.txtTime = updateTimerText(shortBreakTime, 0);
+    longBreakParams.txtTime = updateTimerText(longBreakTime, 0);
     txtTime.innerHTML = studyTimer.minutes + ":00"
   }
 
@@ -56,7 +66,7 @@ window.onload = function() {
     background: "rgba(255, 75, 40)",
     windowBackground: `url('${redBackground.src}') center/cover no-repeat`,
     txtTimerName: "Study",
-    txtTime: `${studyTimer.minutes}:00`,
+    txtTime: `${studyTime}:00`,
     btnBackground: "firebrick"
   };
 
@@ -64,7 +74,7 @@ window.onload = function() {
     background: "rgba(100, 200, 255)",
     windowBackground:  `url('${blueBackground.src}') center/cover no-repeat`,
     txtTimerName: "Short Break",
-    txtTime: `0${shortBreakTimer.minutes}:00`,
+    txtTime: `0${shortBreakTime}:00`,
     btnBackground: "cadetblue"
   };
 
@@ -72,7 +82,7 @@ window.onload = function() {
     background: "rgb(68, 196, 94)",
     windowBackground:  `url('${greenBackground.src}') center/cover no-repeat`,
     txtTimerName: "Long Break",
-    txtTime: `${longBreakTimer.minutes}:00`,
+    txtTime: `${longBreakTime}:00`,
     btnBackground: "cadetblue"
   }
 
@@ -84,7 +94,7 @@ window.onload = function() {
   function runNextTimer(lap) {
     btnStart.style.display = "block";
     if (lap % 8 === 0) {
-      longBreakTimer.minutes = 30;
+      longBreakTimer.minutes = longBreakTime;
       // updates the css properties to match the timer.
       updateGraphics(longBreakParams);
       btnStart.onclick = function() {
@@ -92,14 +102,14 @@ window.onload = function() {
         longBreakTimer.countdown(lap);
       }
     } else if (lap % 2 == 0) {
-      shortBreakTimer.minutes = 5;
+      shortBreakTimer.minutes = shortBreakTime;
       updateGraphics(shortBreakParams);
       btnStart.onclick = function() {
         btnStart.style.display = "none";
         shortBreakTimer.countdown(lap);
       }
     } else {
-      studyTimer.minutes = 25;
+      studyTimer.minutes = studyTime;
       updateGraphics(studyParams);
       btnStart.onclick = function() {
         btnStart.style.display = "none";
@@ -219,7 +229,14 @@ window.onload = function() {
   // runs the first timer with lap set to 1.
   // runNextTimer(1);
 
+  runNextTimer(1);
+
   ///////////////////////////////////////////////////////////////////////////////
+  // ######################################### //
+  // ########### SETTINGS WINDOW ############# //
+  // ######################################### //
+
+  // Globals //
 
   function checkInputs () {
     var studyInput = inputStudy.value;
@@ -238,6 +255,12 @@ window.onload = function() {
     var inputs = checkInputs();
     if (inputs[0] == "" || inputs[1] == "" || inputs[2] == "") {
       alertWindow.style.display = "flex";
+      alertWindow.style.width = "23rem";
+      alertText.innerHTML = "Invalid Timers: Numbers Only.";
+    } else if (inputs[0].length > 3 || inputs[1].length > 3 || inputs[2].length > 3) {
+      alertWindow.style.display = "flex";
+      alertWindow.style.display.width = "23rem";
+      alertText.innerHTML = "Invalid Timers: Too Long.";
     } else {
       settingsContent.style.display = "none";
       timerContent.style.display = "flex";
