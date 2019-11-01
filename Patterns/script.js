@@ -2,11 +2,11 @@ var canvas = document.getElementById("canvas");
 var c = canvas.getContext("2d");
 
 var ball1 = {
-  x: 40,
+  x: 10,
   y: 40,
   dx: 10,
   dy: -10,
-  radius: 5,
+  radius: Math.ceil(Math.random() * 10),
   colour: "red"
 };
 
