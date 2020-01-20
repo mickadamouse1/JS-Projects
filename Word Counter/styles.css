@@ -2,17 +2,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  color: #333;
 }
 
 body {
   background: #f4f4f4;
 }
 
+#title {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  font-size: 3rem;
+}
+
 section {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
   align-items: center;
   flex-direction: column;
   color: wheat;
@@ -21,12 +28,12 @@ section {
 #controls {
   display: flex;
   flex-direction: column;
+  width: 600px;
 }
 
 #controls textarea {
   height: 200px;
   padding: 10px;
-  border: solid;
   border-bottom: none;
   outline: none;
 }
@@ -34,9 +41,9 @@ section {
 #controls button {
   height: 75px;
   background: wheat;
-  border: solid;
-  font-size: 50px;
+  font-size: 2.5rem;
   outline: none;
+  border-top: none !important;
 }
 
 #controls button:hover {
@@ -49,6 +56,10 @@ section {
   height: 500px;
   width: 600px;
   margin-top: 40px;
-  border: solid 1px;
   padding: 7px 0px 0 10px;
+  line-height: 1.8rem;
+}
+
+#controls button, #controls textarea, #output {
+  border: 1px solid #333;
 }
